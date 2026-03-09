@@ -60,7 +60,7 @@ cursor:pointer;
 
 <p>03 April 2026</p>
 
-<p>Banda Aceh</p>
+<p>Kajhu,Baitussalam,Aceh Besar</p>
 <h2>Menuju Hari Bahagia</h2>
 
 <p id="countdown"></p>
@@ -94,11 +94,14 @@ hari + " Hari " + jam + " Jam " + menit + " Menit " + detik + " Detik";
 </body>
 <script>
 function bukaUndangan(){
+  alert("Selamat datang di undangan pernikahan kami 💍");
 
-alert("Selamat datang di undangan pernikahan kami 💍");
-
-document.getElementById("musik").play();
-
+  const musik = document.getElementById("musik");
+  if (musik) {
+    musik.play().catch(() => {
+      console.log("Autoplay diblokir, klik lagi untuk memutar musik.");
+    });
+  }
 }
 </script>
 </html>
