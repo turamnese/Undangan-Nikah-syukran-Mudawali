@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Undangan Pernikahan</title>
+<title>Akad Nikah</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 <style>
 body{
@@ -57,9 +57,17 @@ animation:fall linear forwards;
 0%{transform:translateY(-20px) rotate(0deg);}
 100%{transform:translateY(110vh) rotate(360deg);}
 }
+.fade-out{
+opacity:0;
+transition:1s;
+}
 
+.fade-in{
+opacity:1;
+transition:1s;
+}
 </style>
-
+  
 </head>
 
 <script>
@@ -70,7 +78,7 @@ const bunga = document.createElement("div");
 
 bunga.classList.add("flower");
 
-bunga.innerHTML = "🌸";
+bunga.innerHTML = "🍂🍁";
 
 bunga.style.left = Math.random()*100 + "vw";
 
@@ -91,25 +99,23 @@ setInterval(buatBunga,800);
 
 <div class="card" id="cover">
 <div id="undangan" style="display:none; margin-top:40px;">
-
+<div id="isiUndangan" style="display:none; opacity:0">
 <h2>Akad Nikah</h2>
 <p>Jum'at, 03 April 2026</p>
 <p>09:00 WIB</p>
-
-
-<p>Mesjid Habib Chik Kajhu Kec. Baitussalam</p>
+  
+<p>Masjid Habib Chik Kajhu Kec. Baitussalam</p>
 <p>Aceh Besar</p>
 
 </div>
 <h1>The Wedding Of</h1>
 
 <h2>Syukran Mudawali</h2>
-<p>&</p>
+<h2>&</h2>
 <h2>Nadia Putri Balqis</h2>
 
-<p>03 April 2026</p>
+<p>Jum'at, 03 April 2026</p>
 
-<p>Kajhu,Baitussalam,Aceh Besar</p>
 <h2>Menuju Hari Bahagia</h2>
 
 <p id="countdown"></p>
@@ -142,15 +148,37 @@ hari + " Hari " + jam + " Jam " + menit + " Menit " + detik + " Detik";
 
 </body>
 <script>
-function bukaUndangan(){
-  alert("Selamat datang di undangan pernikahan kami 💍");
 
-  const musik = document.getElementById("musik");
-  if (musik) {
-    musik.play().catch(() => {
-      console.log("Autoplay diblokir, klik lagi untuk memutar musik.");
-    });
-  }
+function bukaUndangan(){
+
+alert("Selamat datang di undangan pernikahan kami 💍");
+
+let cover = document.getElementById("cover");
+
+cover.classList.add("fade-out");
+
+setTimeout(()=>{
+
+cover.style.display="none";
+
+let isi = document.getElementById("isiUndangan");
+
+isi.style.display="block";
+
+setTimeout(()=>{
+isi.style.opacity="1";
+},100);
+
+},800);
+
+let musik = document.getElementById("musik");
+
+if(musik){
+musik.play();
 }
+
+}
+
+</script>
 </script>
 </html>
