@@ -40,8 +40,18 @@ cursor:pointer;
 
 <body>
 
-<div class="card">
+<div class="card" id="cover">
+<div id="undangan" style="display:none; margin-top:40px;">
 
+<h2>Akad Nikah</h2>
+<p>Jum'at, 03 April 2026</p>
+<p>09:00 WIB</p>
+
+
+<p>Mesjid Habib Chik Kajhu Kec. Baitussalam</p>
+<p>Aceh Besar</p>
+
+</div>
 <h1>The Wedding Of</h1>
 
 <h2>Syukran Mudawali</h2>
@@ -52,9 +62,14 @@ cursor:pointer;
 
 <p>Banda Aceh</p>
 
-<button>Buka Undangan</button>
+<button onclick="bukaUndangan()">Buka Undangan</button>
 
 </div>
 
 </body>
+<script>
+function bukaUndangan(){
+alert("Selamat datang di undangan pernikahan kami 💍");
+}
+  </script>
 </html>
