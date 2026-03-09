@@ -61,15 +61,44 @@ cursor:pointer;
 <p>03 April 2026</p>
 
 <p>Banda Aceh</p>
+<h2>Menuju Hari Bahagia</h2>
 
+<p id="countdown"></p>
+  <script>
+
+const tanggalNikah = new Date("April 3, 2026 09:00:00").getTime();
+
+setInterval(function(){
+
+let sekarang = new Date().getTime();
+
+let jarak = tanggalNikah - sekarang;
+
+let hari = Math.floor(jarak / (1000*60*60*24));
+let jam = Math.floor((jarak % (1000*60*60*24)) / (1000*60*60));
+let menit = Math.floor((jarak % (1000*60*60)) / (1000*60));
+let detik = Math.floor((jarak % (1000*60)) / 1000);
+
+document.getElementById("countdown").innerHTML =
+hari + " Hari " + jam + " Jam " + menit + " Menit " + detik + " Detik";
+
+},1000);
+
+  </script>
 <button onclick="bukaUndangan()">Buka Undangan</button>
-
+<audio id="musik" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9b1c62b8c2.mp3">
+</audio>
 </div>
 
 </body>
 <script>
 function bukaUndangan(){
+
 alert("Selamat datang di undangan pernikahan kami 💍");
+
+document.getElementById("musik").play();
+
 }
-  </script>
+</script>
 </html>
