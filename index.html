@@ -34,10 +34,48 @@ background:#d4af37;
 border-radius:20px;
 cursor:pointer;
 }
+  
+.flower{
+position:fixed;
+top:-20px;
+font-size:18px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+0%{transform:translateY(-20px) rotate(0deg);}
+100%{transform:translateY(110vh) rotate(360deg);}
+}
+
 </style>
 
 </head>
 
+<script>
+
+function buatBunga(){
+
+const bunga = document.createElement("div");
+
+bunga.classList.add("flower");
+
+bunga.innerHTML = "🌸";
+
+bunga.style.left = Math.random()*100 + "vw";
+
+bunga.style.animationDuration = (Math.random()*5+5) + "s";
+
+document.body.appendChild(bunga);
+
+setTimeout(()=>{
+bunga.remove();
+},10000);
+
+}
+
+setInterval(buatBunga,800);
+
+</script>
 <body>
 
 <div class="card" id="cover">
