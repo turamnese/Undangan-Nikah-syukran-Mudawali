@@ -100,13 +100,6 @@ setInterval(buatBunga,800);
 <div class="card" id="cover">
 <div id="undangan" style="display:none; margin-top:40px;">
 <div id="isiUndangan" style="display:none; opacity:0">
-<h2>Akad Nikah</h2>
-<p>Jum'at, 03 April 2026</p>
-<p>09:00 WIB</p>
-  
-<p>Masjid Habib Chik Kajhu Kec. Baitussalam</p>
-<p>Aceh Besar</p>
-
 </div>
 <h1>The Wedding Of</h1>
 
@@ -114,11 +107,22 @@ setInterval(buatBunga,800);
 <h2>&</h2>
 <h2>Nadia Putri Balqis</h2>
 
+<p>03 April 2026</p>
+
+<button onclick="bukaUndangan()">Buka Undangan</button>
+
+</div>
+<div class="card" id="isiUndangan" style="display:none; opacity:0">
+<h2>Akad Nikah</h2>
 <p>Jum'at, 03 April 2026</p>
-
+<p>09:00 WIB</p>
+  
+<p>Masjid Habib Chiek Kajhu Kec. Baitussalam</p>
+<p>Aceh Besar</p>
 <h2>Menuju Hari Bahagia</h2>
-
 <p id="countdown"></p>
+
+</div>
   <script>
 
 const tanggalNikah = new Date("April 3, 2026 09:00:00").getTime();
